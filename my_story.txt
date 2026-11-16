@@ -1,6 +1,96 @@
-START_HP 10
-SCENE Replace this file with your own story.
+START_HP 12
+SCENE Eevee arrives at the Pokemon League, but every clock has stopped at midnight.
 HP 0
 LOOT 0
 ITEM none
-CHOICES 0
+CHOICES 3
+LABEL Explore the strange Poke Mart
+  SCENE The empty Poke Mart is glowing, and a Rotom is hiding inside one machine.
+  HP -1
+  LOOT 8
+  ITEM Poke Ball
+  CHOICES 2
+  LABEL Press the red button
+    SCENE The machine gives you a golden ticket, but it pulls you into a strange battle screen.
+    HP -20
+    LOOT 4
+    ITEM Golden Ticket
+    CHOICES 0
+  LABEL Ask Rotom for help
+    SCENE Rotom points you toward a quiet exit behind the Poke Mart.
+    HP 0
+    LOOT 1
+    ITEM none
+    CHOICES 1
+    LABEL Leave through the back door
+      SCENE You escape with a map fragment showing the location of the League bell.
+      HP 0
+      LOOT 3
+      ITEM Map Fragment
+      CHOICES 0
+LABEL Follow Pikachu's sparks
+  SCENE Pikachu's sparks lead across the dark path toward an abandoned Pokemon gym.
+  HP -1
+  LOOT 2
+  ITEM Potion
+  CHOICES 2
+  LABEL Enter the abandoned gym
+    SCENE The gym doors open into an arena covered in blue electric lights.
+    HP -1
+    LOOT 3
+    ITEM none
+    CHOICES 2
+    LABEL Cross the electric arena
+      SCENE The floor shocks your shoes, but Eevee carefully crosses the arena.
+      HP -2
+      LOOT 2
+      ITEM Magnet
+      CHOICES 1
+      LABEL Climb the championship stairs
+        SCENE You climb five flights of stairs while the frozen League disappears below you.
+        HP -1
+        LOOT 1
+        ITEM none
+        CHOICES 1
+        LABEL Ring the League bell
+          SCENE The League bell rings, and every clock in the region begins moving again.
+          HP 0
+          LOOT 6
+          ITEM Thunder Stone
+          CHOICES 0
+    LABEL Take the tunnel under the gym
+      SCENE The tunnel is cramped, but it safely leads underneath the gym.
+      HP 0
+      LOOT 5
+      ITEM Gym Key
+      CHOICES 0
+  LABEL Rest beside Snorlax
+    SCENE Snorlax blocks the path, but resting beside it helps you recover before returning home.
+    HP 2
+    LOOT 1
+    ITEM none
+    CHOICES 0
+LABEL Ask Professor Oak's hologram
+  SCENE Professor Oak's hologram warns that the League bell only responds to brave trainers.
+  HP 0
+  LOOT 1
+  ITEM Pokedex
+  CHOICES 2
+  LABEL Trade a berry for directions
+    SCENE You trade a berry for directions to a hidden path behind the League.
+    HP -1
+    LOOT 2
+    ITEM none
+    CHOICES 1
+    LABEL Follow the moonlit trail
+      SCENE The moonlit trail guides Eevee safely back to the League entrance.
+      HP 0
+      LOOT 4
+      ITEM none
+      CHOICES 0
+  LABEL Ignore Professor Oak
+    SCENE You ignore the warning and spend the rest of the night watching the frozen clocks.
+    HP 0
+    LOOT 0
+    ITEM none
+    CHOICES 0
