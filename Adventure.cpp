@@ -282,10 +282,19 @@ void Adventure::play() {
 //   Endings: <count>
 //   Longest playthrough: <height> choices
 void Adventure::printStats() const {
+    std::cout << "Scenes: "
+              << tree_.countScenes() << std::endl;
+
+    std::cout << "Endings: "
+              << tree_.countEndings() << std::endl;
+
+    std::cout << "Longest playthrough: "
+              << tree_.height() << " choices" << std::endl;
 }
 
 // TODO 15: print every ending in the story, one per line.
 void Adventure::printSpoilers() const {
+    printEndings(tree_.getRoot(), "");
 }
 
 // TODO 16: print every ending below scene.
@@ -295,6 +304,31 @@ void Adventure::printSpoilers() const {
 // If the very first scene is an ending, print "Path (start): <scene text>".
 // Endings print in order: choice 1 before choice 2 before choice 3.
 void Adventure::printEndings(Scene<Moment>* scene, const std::string& path) const {
+    if (scene == nullptr) {
+        return;
+    }
+
+    if (scene->isEnding()) {
+        std::string displayedPath;
+
+        if (path.empty()) {
+            displayedPath = "(start)";
+        } else {
+            displayedPath = path;
+        }
+
+        std::cout << "Path " << displayedPath << ": "
+                  << scene->getData()->getText() << std::endl;
+
+        return;
+    }
+
+    for (int i = 0; i < scene->getNumChoices(); i++) {
+        printEndings(
+            scene->getChoice(i),
+            extendPath(path, i + 1)
+        );
+    }
 }
 
 // TODO 17: the greedy advisor.
